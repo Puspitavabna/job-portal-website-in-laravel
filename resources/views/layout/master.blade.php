@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@yield('meta_description' , 'job website description')">
-    <meta name="author" content="aisite">
+    <meta name="author" content="jobSearch_site">
     <meta name="keywords" content="@yield('meta_keyword', 'ais ite');">
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="www.aisite.com">
+    <meta property="og:site_name" content="//">
     <meta property="og:image" content="">
     <meta property="og:url" content="{{ url()->current() }}">
     <title>@yield('title') Jobs website</title>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,700%7CRoboto:400,400i,700' rel='stylesheet'>
     <!-- Favicons-->
-    <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon">
+    {{--<link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon">--}}
 
     <!-- BASE CSS -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">

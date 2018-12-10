@@ -11,13 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
+Route::get('/',[
+    'uses' => 'HomeController@index',
+    'as' =>'home.index'
+]);
+
+Route::get('/job/{category}/{slug',[
+    'uses' => 'JobController@show',
+    'as' =>'job.show'
+]);
 
 //Admin Controller
+Route::group(['middleware' => 'auth' , 'prefix' => 'admin'] , function(){
 
-Route::resource('/admin_jobs','QuizQuestionController');
+    Route::post('/admin_login', [
+        'uses' => 'Admin\AdminController@login',
+        'as' => 'admin_post_login'
+    ]);
+
+    Route::resource('/admin_job', 'Admin\AdminJobController');
+
+});
+
