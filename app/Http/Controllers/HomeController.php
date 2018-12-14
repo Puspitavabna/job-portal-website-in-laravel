@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use App\Models\Job;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 
@@ -12,9 +15,25 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+  {
+
+       $categories = Category::orderBy('created_at', 'desc')->get();
+
+            return view('home.index', compact('categories'));
+  }
+
+  public function getCategoryPost($slug){
+      $categories = Category::orderBy('created_at', 'desc')->get();
+      $category= Category::where('slug',$slug)->first();
+
+      if(!empty($category)){
+          $jobs= Job::where('category_id' , $category->id)
+                  ->orderBy('created_at', 'desc')->Paginate(5);
+          return view('home.job', compact('categories','jobs', 'category'));
+      }
+  }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,6 +55,8 @@ class HomeController extends Controller
     {
         //
     }
+
+
 
     /**
      * Display the specified resource.

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('content')
     <div class="container">
         <div class="row">
@@ -13,26 +13,29 @@
                             <th>No.</th>
                             <th>job_title</th>
                             <th>job_description</th>
+                            <th>location</th>
+                            <th>budget</th>
                             <th>Category_name</th>
                             <th>User</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($jobs as $key => $job)
-                            {{ csrf_field() }}
                             <tr>
-                                <td>{{ $job->id }}</td>
+                                <td>{{ $job->id}}</td>
                                 <td>{{ $job->job_title }}</td>
-                                <td>{{ $job->job_description }}</td>
+                                <td>{!! $job->job_description !!}</td>
+                                <td>{{ $job->location }}</td>
+                                <td>{{ $job->budget }}</td>
                                 <td>{{ $job->category->category_name }}</td>
                                 <td>{{ $job->user->user_name }}</td>
                                 <td width="5%">
                                     <a href="{{ $job->job_url }}" target="_blank" class="btn-sm btn-primary">Views</a>
                                     <a href="{{route('admin_job.edit', $job->slug) }}" target="_blank" class="btn-sm btn-warning">Edit</a>
                                     <form method="POST" action="{{route('admin_job.destroy', $job->slug)}}">
-                                        <input name="_method" type="hidden" value="DELETE">
-                                        <input name="submit" type="Delete" class="btn-sm btn-danger">
-
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="delete">
+                                        <button class="btn-sm btn-danger">Delete</button>
                                     </form>
                                 </td>
                             </tr>

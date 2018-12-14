@@ -46,6 +46,8 @@ class JobController extends Controller
     public function show($category, $slug)
     {
         $job = Job:: where('slug', $slug)->first();
+        $category_jobs= Job::where('category_id',$job->category_id)->get();
+        return view('job.show',compact('job','category_jobs'));
 
     }
 

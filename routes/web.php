@@ -20,13 +20,22 @@ Route::get('/',[
     'as' =>'home.index'
 ]);
 
-Route::get('/job/{category}/{slug',[
+Route::get('/job/{category}/{slug}',[
     'uses' => 'JobController@show',
     'as' =>'job.show'
+]);
+Route::get('/category/{slug}',[
+    'uses' => 'HomeController@getCategoryPost',
+    'as' =>'category.post'
 ]);
 
 //Admin Controller
 Route::group(['middleware' => 'auth' , 'prefix' => 'admin'] , function(){
+
+    Route::get('/',[
+        'uses' => 'Admin\AdminController@index',
+        'as' => 'admin.index'
+    ]);
 
     Route::post('/admin_login', [
         'uses' => 'Admin\AdminController@login',
