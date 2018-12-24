@@ -20,28 +20,28 @@ class CategorySeeder extends Seeder
                'parent_id' => null,
                'category_name' => 'Engineering',
                'description'=>null,
-               'category_slug' =>'engineering'
+               'slug' =>'engineering'
            ],
            [
                'id' => '2',
                'parent_id' => null,
                'category_name' => 'Accounting',
                'description'=>null,
-               'category_slug' => 'accounting'
+               'slug' => 'accounting'
            ],
            [
                'id' => '3',
                'parent_id' => null,
                'category_name' => 'NGO',
                'description'=>null,
-               'category_slug' => 'ngo'
+               'slug' => 'ngo'
            ],
            [
                'id' => '4',
                'parent_id' => null,
                'category_name' => 'Textile',
                'description'=>null,
-               'category_slug' => 'textile'
+               'slug' => 'textile'
            ]
 
        ]);

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Job;
+use App\Models\Category;
 
 class JobController extends Controller
 {
@@ -43,11 +45,20 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($category, $slug)
+    public function show( $slug)
     {
-        $job = Job:: where('slug', $slug)->first();
-        $category_jobs= Job::where('category_id',$job->category_id)->get();
-        return view('job.show',compact('job','category_jobs'));
+//        $job = Job:: where('slug', $slug)->first();
+//        $category_jobs= Job::where('category_id',$job->category_id)->get();
+//        return view('job.show',compact('job','category_jobs'));
+
+//        $categories = Category::orderBy('created_at', 'desc')->get();
+//        $category= Category::where('slug',$slug)->first();
+//
+//        if(!empty($category)){
+//            $jobs= Job::where('category_id' , $category->id)
+//                ->orderBy('created_at', 'desc')->Paginate(5);
+//            return view('job.show', compact('categories','jobs', 'category'));
+//        }
 
     }
 

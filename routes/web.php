@@ -20,13 +20,44 @@ Route::get('/',[
     'as' =>'home.index'
 ]);
 
-Route::get('/job/{category}/{slug}',[
+Route::get('/category/{slug}',[
     'uses' => 'JobController@show',
     'as' =>'job.show'
 ]);
 Route::get('/category/{slug}',[
     'uses' => 'HomeController@getCategoryPost',
     'as' =>'category.post'
+]);
+
+Route::get('/user/forgot_password', [
+    'uses' => 'UserController@forgotPassword',
+    'as' => 'user.forgot_password'
+]);
+//
+Route::get('/users/sign_in', [
+    'uses' => 'UserController@getLogin',
+    'as' => 'login'
+]);
+//
+Route::post('/users/sign_in', [
+    'uses' => 'UserController@postLogin',
+    'as' => 'user.sign_in'
+]);
+//
+Route::get('/users/sign_up', [
+    'uses' => 'UserController@beforeGetRegister',
+    'as' => 'user.sign_up'
+]);
+Route::get('user/sign_up/type/{name}', 'UserController@getRegister');
+Route::post('/user/sign_up/type/', [
+    'uses' => 'UserController@postRegister',
+     'as'  => 'user.post.sign_up'
+]);
+
+Route::get('/users/{user_name}',[
+    'uses' => 'UserController@show',
+    'as' => 'user.profile'
+
 ]);
 
 //Admin Controller

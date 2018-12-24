@@ -6,19 +6,20 @@
     @include('include.header')
     <div class="container-fluid top15">
         <div class="row">
-            <div class="col-md-3">
-                <table class="table table-striped">
-                    <tbody>
-                    <div class="list-group">
-                        @foreach($category_job as $category_job)
-                            <div>
-                                <a class="list-group-item list-group-item-action {{ Request::url() == $category_tutorial->tutorial_url ? 'active' : '' }}" href="{{ $category_tutorial->tutorial_url }}">{{$category_tutorial->title}}</a>
-                            </div>
-                        @endforeach
-                    </div>
-                    </tbody>
-                </table>
-            </div>
+            {{--<div class="col-md-3">--}}
+                {{--<table class="table table-striped">--}}
+                    {{--<tbody>--}}
+                    {{--<div class="list-group">--}}
+                        {{--@foreach($category_job as $category_job)--}}
+                            {{--<div>--}}
+                                {{--<li style="text-transform: capitalize;"><a href="{{ route('job.show',['slug' => $category_job->slug ])}}">{{ $category->category_name }}</a>--}}
+                                {{--</li>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
+                    {{--</tbody>--}}
+                {{--</table>--}}
+            {{--</div>--}}
 
             <div class="col-md-6 individual-article nopadding">
                 <div class="box-style">

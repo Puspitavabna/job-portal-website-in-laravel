@@ -2,6 +2,8 @@
     <a class="navbar-brand" href="{{ route('home.index') }}">JOb portal website</a>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('user.sign_up') }}">Sign up</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{url('users/sign_in')}}">Login</a></li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0">

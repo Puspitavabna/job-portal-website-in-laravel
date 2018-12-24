@@ -30,7 +30,7 @@
                                 <td>{{ $job->category->category_name }}</td>
                                 <td>{{ $job->user->user_name }}</td>
                                 <td width="5%">
-                                    <a href="{{ $job->job_url }}" target="_blank" class="btn-sm btn-primary">Views</a>
+                                    <a href="#" target="_blank" class="btn-sm btn-primary">Views</a>
                                     <a href="{{route('admin_job.edit', $job->slug) }}" target="_blank" class="btn-sm btn-warning">Edit</a>
                                     <form method="POST" action="{{route('admin_job.destroy', $job->slug)}}">
                                         {{ csrf_field() }}
