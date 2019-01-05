@@ -32,7 +32,9 @@ class CreateUsersTable extends Migration
             $table->integer('admin_role_type_id');
             $table->rememberToken();
             $table->timestamps();
+
         });
+
     }
 
     /**

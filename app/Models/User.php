@@ -42,8 +42,8 @@ class User extends Authenticatable
     {
         if (!empty($this->avatar)) {
             $file = config('constants.profile_upload')
-                . $this->created_at->year . '/' . $this->created_at->format('m') . '/'
-                . $this->avatar;
+                .$this->created_at->year . '/' . $this->created_at->format('m') . '/'
+                .$this->avatar;
 
             $s3_file_path = Storage::disk('s3')->url($file);
         } else {

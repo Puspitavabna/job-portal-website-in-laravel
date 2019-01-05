@@ -34,16 +34,21 @@ Route::get('/user/forgot_password', [
     'as' => 'user.forgot_password'
 ]);
 //
-Route::get('/users/sign_in', [
-    'uses' => 'UserController@getLogin',
-    'as' => 'login'
-]);
+//Route::get('/users/sign_in', [
+//    'uses' => 'UserController@getLogin',
+//    'as' => 'login'
+//]);
+////
+//Route::post('/users/sign_in', [
+//    'uses' => 'UserController@postLogin',
+//    'as' => 'user.sign_in'
+//]);
 //
-Route::post('/users/sign_in', [
-    'uses' => 'UserController@postLogin',
-    'as' => 'user.sign_in'
-]);
-//
+
+Route::get('send','mailController@getContact');
+Route::post('send','mailController@postContact');
+
+
 Route::get('/users/sign_up', [
     'uses' => 'UserController@beforeGetRegister',
     'as' => 'user.sign_up'
@@ -60,8 +65,19 @@ Route::get('/users/{user_name}',[
 
 ]);
 
+Route::get('/email_notification/edit_settings',[
+    'uses' => 'EmailNotificationController@editsettings',
+    'as' => 'email_notification.edit_settings'
+]);
+
+Route::resource('email_notification','EmailNotificationController');
 //Admin Controller
 Route::group(['middleware' => 'auth' , 'prefix' => 'admin'] , function(){
+
+    Route::get('/', [
+        'uses' => 'Admin\AdminController@index',
+        'as' => 'admin.index'
+    ]);
 
     Route::get('/',[
         'uses' => 'Admin\AdminController@index',

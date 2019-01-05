@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Job;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\EducationType;
+use App\Models\Education;
 use Illuminate\Validation\Rule;
 use Validator;
 use App\Models\RoleType;
@@ -153,6 +155,11 @@ class UserController extends Controller
             $age = Carbon::createFromDate($year, $month, $day)->diff(Carbon::now()) ->format('%y years');
         }else {
             $age = null;
+        }
+        $education_types = EducationType::all();
+        $education_lists = Education::where('user_id', $user->id)->get();
+        foreach($education_lists as $education_list){
+            $education_list['education_type_title'] = $education_list->education_type->title;
         }
         if($user->role_type_id == 2){
 
