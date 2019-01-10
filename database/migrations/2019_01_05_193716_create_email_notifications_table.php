@@ -19,13 +19,12 @@ class CreateEmailNotificationsTable extends Migration
             $table->integer('send_interval_email')->nullable();
             $table->integer('send_interval_push')->nullable();
             $table->double('distance')->nullable();
-            $table->boolean('subscribed_email')->nullable();
-            $table->boolean('subscribed_push')->nullable();
+            $table->boolean('subscribe_email')->nullable();
+            $table->boolean('subscribe_push')->nullable();
             $table->dateTime('email_last_send')->nullable();
             $table->integer('user_id');
-
-            $table->boolean('subscriber_message')->nullable();
-            $table->boolean('subscriber_job_offer')->nullable();
+            $table->boolean('subscribe_message')->nullable();
+            $table->boolean('subscribe_job_offer')->nullable();
             $table->boolean('subscriber_job_applicant')->nullable();
             $table->boolean('subscriber_job_offer_accept')->nullable();
             $table->timestamps();

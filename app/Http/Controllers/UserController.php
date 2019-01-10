@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Models\EducationType;
 use App\Models\Education;
+use App\Mail\JobNotification;
 use Illuminate\Validation\Rule;
 use Validator;
 use App\Models\RoleType;
@@ -173,4 +174,5 @@ class UserController extends Controller
 
 
     }
+
 }
