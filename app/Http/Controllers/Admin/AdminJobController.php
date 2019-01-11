@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Job;
+use App\Mail\JobNotification;
 use App\User;
 use App\Models\Category;
 use DB;
@@ -36,6 +37,7 @@ class AdminJobController extends Controller{
         $job->category_id = $request->category_id;
         $job->user_id = Auth::user()->id;
         $job->save();
+
         Session::flash('success','Jobs added Successfully');
         return redirect()->route('admin_job.index');
     }

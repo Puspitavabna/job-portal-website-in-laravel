@@ -42,7 +42,36 @@ class CategorySeeder extends Seeder
                'category_name' => 'Textile',
                'description'=>null,
                'slug' => 'textile'
+           ],
+           [
+               'id' => '5',
+               'parent_id' => null,
+               'category_name' => 'Telecommunication',
+               'description'=>null,
+               'slug' =>'engineering'
+           ],
+           [
+               'id' => '6',
+               'parent_id' => null,
+               'category_name' => 'Restrurent/Food Service',
+               'description'=>null,
+               'slug' => 'accounting'
+           ],
+           [
+               'id' => '7',
+               'parent_id' => null,
+               'category_name' => 'Education Training',
+               'description'=>null,
+               'slug' => 'ngo'
+           ],
+           [
+               'id' => '8',
+               'parent_id' => null,
+               'category_name' => 'Health',
+               'description'=>null,
+               'slug' => 'textile'
            ]
+
 
        ]);
     }
