@@ -8,16 +8,16 @@
     <meta name="author" content="CreativeLayers">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-    <link rel="stylesheet" type="text/css" href="css/chosen.css" />
-    <link rel="stylesheet" type="text/css" href="css/colors/color.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/line-awesome.min.css">
-    <link rel="stylesheet" href="css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-grid.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/icons.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/chosen.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/colors/color.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/line-awesome-font-awesome.min.css')}}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />-->
     <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
@@ -51,14 +51,14 @@
 
 
 
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/modernizr.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/wow.min.js" type="text/javascript"></script>
-<script src="js/slick.min.js" type="text/javascript"></script>
-<script src="js/parallax.js" type="text/javascript"></script>
-<script src="js/select-chosen.js" type="text/javascript"></script>
+<script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/modernizr.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/wow.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/slick.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/parallax.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/select-chosen.js')}}" type="text/javascript"></script>
 </body>
 </html>
 
