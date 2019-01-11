@@ -1,6 +1,7 @@
 @extends('layout.master')
-@include('include.header')
 @section('content')
+@include('include.header')
+
     <div class="block no-padding">
         <div class="container fluid">
             <div class="row">
